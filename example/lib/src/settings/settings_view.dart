@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'settings_controller.dart';
 
+import '../../../commit_info.g.dart';
+
 /// Displays the various settings that can be customized by the user.
 ///
 /// When a user changes a setting, the SettingsController is updated and
@@ -18,6 +20,12 @@ class SettingsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
+      ),
+      bottomSheet: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Text(
+          "Build: commit ${commitInfo.commitIdShort} on ${commitInfo.branch}, from ${commitInfo.timestamp}${commitInfo.localChanges ? " (with local changes)" : ""}",
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

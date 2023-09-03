@@ -21,7 +21,6 @@ class CommitInfo {
   DateTime get dateTime => DateTime.fromMicrosecondsSinceEpoch(timestamp);
 }
 
-// ignore: unnecessary_nullable_for_final_variable_declarations
 const CommitInfo? commitInfo = null;
 """;
 

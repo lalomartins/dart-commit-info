@@ -1,3 +1,5 @@
+// Dummy CommitInfo file which you can commit with your source code, so that your editor
+// won't complain about missing files or declarations
 class CommitInfo {
   final String commitId;
   final String commitIdShort;
@@ -16,10 +18,4 @@ class CommitInfo {
   DateTime get dateTime => DateTime.fromMicrosecondsSinceEpoch(timestamp);
 }
 
-// ignore: unnecessary_nullable_for_final_variable_declarations
-const CommitInfo? commitInfo = CommitInfo(
-  commitId: "null",
-  commitIdShort: "null",
-  timestamp: 0,
-  branch: "null",
-);
+const CommitInfo? commitInfo = null;

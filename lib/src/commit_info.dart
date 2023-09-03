@@ -3,16 +3,16 @@ library commit_info;
 class PartialCommitInfo {
   String? commitId;
   String? commitIdShort;
-  int timestamp;
+  int? timestamp;
   String? branch;
-  bool localChanges;
+  bool? localChanges;
 
   PartialCommitInfo({
     this.commitId,
     this.commitIdShort,
-    this.timestamp = 0,
+    this.timestamp,
     this.branch,
-    this.localChanges = false,
+    this.localChanges,
   });
 
   @override
@@ -20,9 +20,9 @@ class PartialCommitInfo {
 class CommitInfo {
   final String commitId;
   final String commitIdShort;
-  final int timestamp;
+  final int? timestamp;
   final String? branch;
-  final bool localChanges;
+  final bool? localChanges;
 
   const CommitInfo({
     required this.commitId,
@@ -32,7 +32,7 @@ class CommitInfo {
     this.localChanges = false,
   });
 
-  DateTime get dateTime => DateTime.fromMicrosecondsSinceEpoch(timestamp);
+  DateTime? get dateTime => timestamp == null ? null : DateTime.fromMicrosecondsSinceEpoch(timestamp!);
 }
 
 // ignore: unnecessary_nullable_for_final_variable_declarations
@@ -41,6 +41,7 @@ const CommitInfo? commitInfo = CommitInfo(
   commitIdShort: "$commitIdShort",
   timestamp: $timestamp,
   branch: "${branch?.replaceAll('"', r'\"')}",
+  localChanges: $localChanges,
 );
 """;
 }

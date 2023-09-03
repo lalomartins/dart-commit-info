@@ -6,9 +6,9 @@ import 'package:commit_info/src/git_builder.dart';
 class CommitInfo {
   final String commitId;
   final String commitIdShort;
-  final int timestamp;
+  final int? timestamp;
   final String? branch;
-  final bool localChanges;
+  final bool? localChanges;
 
   const CommitInfo({
     required this.commitId,
@@ -18,7 +18,7 @@ class CommitInfo {
     this.localChanges = false,
   });
 
-  DateTime get dateTime => DateTime.fromMicrosecondsSinceEpoch(timestamp);
+  DateTime? get dateTime => timestamp == null ? null : DateTime.fromMicrosecondsSinceEpoch(timestamp!);
 }
 
 class GetCommitInfo {

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+const template = """
 // Dummy CommitInfo file which you can commit with your source code, so that your editor
 // won't complain about missing files or declarations
 class CommitInfo {
@@ -20,3 +23,9 @@ class CommitInfo {
 
 // ignore: unnecessary_nullable_for_final_variable_declarations
 const CommitInfo? commitInfo = null;
+""";
+
+void main() {
+  print("Initializing package");
+  File("lib/commit_info.g.dart").writeAsStringSync(template);
+}

@@ -4,6 +4,10 @@ import 'settings_controller.dart';
 
 import '../../../commit_info.g.dart';
 
+final commitInfoStr = (commitInfo == null)
+    ? "unknown"
+    : "commit ${commitInfo!.commitIdShort} on ${commitInfo!.branch}, from ${commitInfo!.timestamp}${commitInfo!.localChanges ? " (with local changes)" : ""}";
+
 /// Displays the various settings that can be customized by the user.
 ///
 /// When a user changes a setting, the SettingsController is updated and
@@ -23,9 +27,7 @@ class SettingsView extends StatelessWidget {
       ),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(16),
-        child: Text(
-          "Build: commit ${commitInfo.commitIdShort} on ${commitInfo.branch}, from ${commitInfo.timestamp}${commitInfo.localChanges ? " (with local changes)" : ""}",
-        ),
+        child: Text("Build: $commitInfoStr"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),

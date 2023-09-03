@@ -1,3 +1,22 @@
+library commit_info;
+
+class PartialCommitInfo {
+  String? commitId;
+  String? commitIdShort;
+  DateTime? timestamp;
+  String? branch;
+  bool localChanges;
+
+  PartialCommitInfo({
+    this.commitId,
+    this.commitIdShort,
+    this.timestamp,
+    this.branch,
+    this.localChanges = false,
+  });
+
+  @override
+  String toString() => """
 class CommitInfo {
   final String commitId;
   final String commitIdShort;
@@ -23,3 +42,5 @@ const CommitInfo? commitInfo = CommitInfo(
   timestamp: 1693578600000000,
   branch: "main",
 );
+""";
+}

@@ -1,0 +1,16 @@
+targets:
+  commit_info:
+    builders:
+      commit_info:git_commit_info:
+        enabled: True
+
+builders:
+  git_commit_info:
+    import: package:commit_info/commit_info.dart
+    builder_factories:
+      - gitBuilder
+    build_extensions:
+      "lib/$lib$":
+        - .g.dart
+    build_to: source
+    auto_apply: dependents

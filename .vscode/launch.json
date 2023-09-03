@@ -23,6 +23,21 @@
       "request": "launch",
       "type": "dart",
       "flutterMode": "release"
+    },
+    {
+      "name": "run builder for example with debug",
+      "cwd": "example",
+      "customTool": "dart",
+      "request": "launch",
+      "program": "./.dart_tool/build/entrypoint/build.dart",
+      "args": ["build", "--delete-conflicting-outputs"],
+      "type": "dart"
+    },
+    {
+      "name": "attach",
+      "cwd": "example",
+      "request": "attach",
+      "type": "dart"
     }
   ]
 }

@@ -49,7 +49,7 @@ more useful, as it will integrate seamlessly.
 
 ## Getting started
 
-`flutter pub add dev:commit_info`
+`flutter pub add dev:commit_info dev:build_runner`
 
 The only real prerequisite is, the command line tools for the VC system you
 want to use have to be available in any environment where you want to run this

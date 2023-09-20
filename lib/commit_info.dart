@@ -18,7 +18,7 @@ class CommitInfo {
     this.localChanges = false,
   });
 
-  DateTime? get dateTime => timestamp == null ? null : DateTime.fromMicrosecondsSinceEpoch(timestamp!);
+  DateTime? get dateTime => timestamp == null ? null : DateTime.fromMillisecondsSinceEpoch(timestamp!);
 }
 
 class GetCommitInfo {

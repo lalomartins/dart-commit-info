@@ -25,7 +25,7 @@ class GitBuilder implements Builder {
           .split("\n");
       info.commitId = commitRes[0];
       info.commitIdShort = commitRes[1];
-      info.timestamp = int.tryParse(commitRes[2]) ?? 0 * 1000;
+      info.timestamp = (int.tryParse(commitRes[2]) ?? 0) * 1000;
       info.branch = commitRes[3].substring(branchPrefix);
     } catch (e) {
       // TODO(lalomartins): report errors

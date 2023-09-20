@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Fix resolution of commit timestamp
+
 ## 0.2.0
 
 - Build to source rather than cache, as Flutter won't look in the cache 🤦

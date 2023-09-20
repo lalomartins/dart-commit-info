@@ -32,7 +32,7 @@ class CommitInfo {
     this.localChanges = false,
   });
 
-  DateTime? get dateTime => timestamp == null ? null : DateTime.fromMicrosecondsSinceEpoch(timestamp!);
+  DateTime? get dateTime => timestamp == null ? null : DateTime.fromMillisecondsSinceEpoch(timestamp!);
 }
 
 // ignore: unnecessary_nullable_for_final_variable_declarations

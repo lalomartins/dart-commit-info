@@ -40,9 +40,6 @@ const CommitInfo? commitInfo = CommitInfo(
 );
 ```
 
-You can find a (barely) more involved example in the `example` folder in this
-library's git repository.
-
 It currently supports git only, but it's designed to be agnostic, and support
 for other VC systems should be easy to add.
 
@@ -84,6 +81,9 @@ class CommitInfoWidget extends StatelessWidget {
       : "commit ${commitInfo!.commitIdShort} on ${commitInfo!.branch}, from ${commitInfo!.timestamp}${commitInfo!.localChanges ? " (with local changes)" : ""}");
 }
 ```
+
+You can find a (barely) more involved example in the `example` folder in this
+library's git repository.
 
 Unfortunately, since [the Flutter build tool is not
 extensible](https://github.com/flutter/flutter/issues/25377) as of this

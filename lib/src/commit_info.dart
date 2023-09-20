@@ -22,7 +22,7 @@ class CommitInfo {
   final String commitIdShort;
   final int? timestamp;
   final String? branch;
-  final bool? localChanges;
+  final bool localChanges;
 
   const CommitInfo({
     required this.commitId,

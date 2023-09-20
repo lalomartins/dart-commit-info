@@ -35,7 +35,6 @@ class CommitInfo {
   DateTime? get dateTime => timestamp == null ? null : DateTime.fromMicrosecondsSinceEpoch(timestamp!);
 }
 
-// ignore: unnecessary_nullable_for_final_variable_declarations
 const CommitInfo? commitInfo = CommitInfo(
   commitId: "$commitId",
   commitIdShort: "$commitIdShort",

@@ -6,7 +6,7 @@ import '../../../commit_info.g.dart';
 
 final commitInfoStr = (commitInfo == null)
     ? "unknown"
-    : "commit ${commitInfo!.commitIdShort} on ${commitInfo!.branch}, from ${commitInfo!.timestamp}${commitInfo!.localChanges ?? false ? " (with local changes)" : ""}";
+    : "commit ${commitInfo!.commitIdShort} on ${commitInfo!.branch}, from ${commitInfo!.timestamp}${commitInfo!.localChanges ? " (with local changes)" : ""}";
 
 /// Displays the various settings that can be customized by the user.
 ///

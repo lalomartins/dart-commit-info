@@ -10,7 +10,7 @@ the Flutter build system works, that can be challenging, possibly even get a
 little hacky.
 
 Enter `commit_info`. This little codegen will create a file
-`commit_info.g.dart` in your cache, in this format:
+`commit_info.g.dart`, in this format:
 
 ```dart
 class CommitInfo {
@@ -40,6 +40,10 @@ const CommitInfo? commitInfo = CommitInfo(
 );
 ```
 
+You might want to `.gitignore` this file, if you want to avoid any risk of
+having the wrong version info in builds. _(Yes, I know I could also generate
+the file in the build cache, but flutter doesn't find it there...)_
+
 It currently supports git only, but it's designed to be agnostic, and support
 for other VC systems should be easy to add.
 
@@ -54,16 +58,6 @@ more useful, as it will integrate seamlessly.
 The only real prerequisite is, the command line tools for the VC system you
 want to use have to be available in any environment where you want to run this
 (including CI).
-
-If you _don't_ want to run it in CI though, just run this:
-
-`dart run commit_info:initialize`
-
-This will create a `commit_info.g.dart` in your _source_ tree (not cache) with
-a `null` CommitInfo. You can then commit this to VC, and the app will build
-fine without the `commit_info` step, including on CI. Just be careful that if
-it gets deleted by the build system, you revert the deletion before committing.
-Yeah I know, bothersome, but I don't know how to avoid it.
 
 ## Usage
 
@@ -97,3 +91,13 @@ no need to run it for each build; it should be sufficient to do it once per
 coding session, or if you want the info to be accurate, once per commit. If you
 prefer to run Flutter from your editor or IDE, you can add an action to run it
 for you.
+
+If you _don't_ want to run it in CI though, just run this instead:
+
+`dart run commit_info:initialize`
+
+This will create a `commit_info.g.dart` with a `null` CommitInfo.
+
+You can also run this to create a null CommitInfo to push to VC, as an
+alternative to `gitignore`ing the generated file. That's a little bothersome
+as you'd need to revert this file before every commit, but it's an option.

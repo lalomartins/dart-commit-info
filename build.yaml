@@ -12,5 +12,5 @@ builders:
     build_extensions:
       "lib/$lib$":
         - .g.dart
-    build_to: cache
+    build_to: source
     auto_apply: dependents
